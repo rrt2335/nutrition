@@ -7,7 +7,6 @@
           <input type="text" class="form-control" v-model="query" id="exampleInputFood" aria-describedby="emailHelp"
             placeholder="What did you eat?" required>
           <button type="submit" class="btn btn-primary m-3">Submit</button>
-          <router-link :to="{name: 'details'}">Switch views</router-link>
         </form>
       </div>
     </div>

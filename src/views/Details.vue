@@ -1,13 +1,15 @@
 <template>
     <div class="details container">
         <div class="row">
-            <div class="col-12">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" alt="Card image cap">
+            <div class="col-12 d-flex justify-content-center">
+                    <router-link :to="{name: 'home'}">Go back</router-link>
+                <div class="card" style="width: 56rem;">
+                    <img class="card-img-top" 
+                    :src="foodItem.photo.thumb" alt="Card image cap">
                     <div class="card-body">
                        <ul>
-                           <h1>Nutrition list</h1>
-                           <router-link :to="{name: 'home'}">Switch views</router-link>
+                           <h3>Nutrition list</h3>
+                           {{foodItem.food_name}}
                            <results></results>
                        </ul>
                     </div>
@@ -23,8 +25,8 @@
         props: ['id'],
         mounted() {},
         computed: {
-            details() {
-                return this.$store.state.details
+            foodItem() {
+                return this.$store.state.nutrition.find(f => f.ndb_no == this.id) || {}
             }
         },
         methods: {}

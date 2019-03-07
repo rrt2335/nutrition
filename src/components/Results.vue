@@ -9,7 +9,26 @@
     </div>
 </template>
 
+
 <script>
+    export default {
+        name: 'results',
+        data() {
+            return {
+                activeFood: {}
+            }
+        },
+        computed: {
+            results() {
+                return this.$store.state.results
+            }
+        },
+        methods: {
+            setActiveFood(food) {
+                this.activeFood = food;
+            }
+        }
+    }
 
 </script>
 

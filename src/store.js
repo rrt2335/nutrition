@@ -13,6 +13,11 @@ var _api = Axios.create({
   }
 })
 
+var _sandboxApi = Axios.create({
+  baseURL: 'https://bcw-sandbox.herokuapp.com/api/tasty/logs/5c819f0fb5fbe5001440b394'
+})
+
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -34,10 +39,10 @@ export default new Vuex.Store({
   },
   actions: {
     initialize({ commit }) {
-      // _api.get('results')
-      //   .then(res => {
-      //     commit('setResults', res.data)
-      //   })
+      _sandboxApi.get()
+        .then(res => {
+          commit('setNutrition', res.data.data.foods)
+        })
 
     },
     setActiveFood({commit}, payload){
@@ -47,6 +52,7 @@ export default new Vuex.Store({
       _api.post('', {query: payload})
         .then(res => {
           console.log(res)
+          commit('setNutrition', res.data.foods)
         })
     }
   }
