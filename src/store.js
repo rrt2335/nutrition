@@ -17,7 +17,6 @@ var _sandboxApi = Axios.create({
   baseURL: 'https://bcw-sandbox.herokuapp.com/api/tasty/logs/5c819f0fb5fbe5001440b394'
 })
 
-
 Vue.use(Vuex)
 
 export default new Vuex.Store({

@@ -9,13 +9,15 @@
                     <img class="card-img-top" :src="foodItem.photo.highres" alt="Card image cap">
                     <div class="card-body">
                         <h2>{{foodItem.food_name[0].toUpperCase() + foodItem.food_name.substr(1)}}</h2>
+                        <h5>Serving quantity:<br>{{foodItem.serving_qty}} {{foodItem.serving_unit}}, {{foodItem.serving_weight_grams}} g</h5>
                         <ul class="text-left">
                             <li>Calories: {{foodItem.nf_calories}} g</li>
-                            <li>Potassium: {{foodItem.nf_potassium}} mg</li>
-                            <li>Protein: {{foodItem.nf_protein}} g</li>
                             <li>Saturated fat: {{foodItem.nf_saturated_fat}} g</li>
-                            <li>Sugars: {{foodItem.nf_sugars}} g</li>
+                            <li>Potassium: {{foodItem.nf_potassium}} mg</li>
                             <li>Carbohydrate: {{foodItem.nf_total_carbohydrate}} g</li>
+                            <li>Sodium: {{foodItem.nf_sodium}} mg</li>
+                            <li>Sugars: {{foodItem.nf_sugars}} g</li>
+                            <li>Protein: {{foodItem.nf_protein}} g</li>
                         </ul>
                         <results></results>
                     </div>
